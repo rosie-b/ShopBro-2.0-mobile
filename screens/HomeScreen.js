@@ -25,8 +25,8 @@ export default class HomeScreen extends React.Component {
             <Image
               source={
                 __DEV__
-                  ? require('../assets/images/sb-icon-144.png')
-                  : require('../assets/images/robot-prod.png')
+                  ? require('../assets/images/robot-prod.png')
+                  : require('../assets/images/144.png')
               }
               style={styles.welcomeImage}
             />
@@ -35,7 +35,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>This is going to be the home page/basic dashboard for shopbro2.0</Text>
+            <Text style={styles.getStartedText}>ENTER TEXT HERE 1</Text>
 
             {/* <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
@@ -43,22 +43,22 @@ export default class HomeScreen extends React.Component {
             SHOPBRO TEAM: Please leave this code.  It will be handy to refer to as we build*/}
 
             <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
+              ENTER TEXT HERE 2
             </Text>
           </View>
 
           <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
+            <TouchableOpacity onPress={this._handleRegister} style={styles.helpLink}>
+              <Text style={styles.helpLinkText}>Create a new account</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
+          <Text style={styles.tabBarInfoText}>ENTER TEXT HERE 4</Text>
 
           <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
+            <MonoText style={styles.codeHighlightText}>ENTER TEXT HERE 5</MonoText>
           </View>
         </View>
       </View>
@@ -92,9 +92,9 @@ export default class HomeScreen extends React.Component {
     WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
   };
 
-  _handleHelpPress = () => {
+  _handleRegister = () => {
     WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
+      'https://shopbro.herokuapp.com/#/register'
     );
   };
 }
