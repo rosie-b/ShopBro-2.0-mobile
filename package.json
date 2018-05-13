@@ -2,7 +2,11 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll",
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios"
   },
   "jest": {
     "preset": "jest-expo"
@@ -15,6 +19,7 @@
     "react-navigation": "2.0.0"
   },
   "devDependencies": {
-    "jest-expo": "^27.0.0"
+    "jest-expo": "^27.0.0",
+    "react-native-scripts": "1.14.0"
   }
 }
