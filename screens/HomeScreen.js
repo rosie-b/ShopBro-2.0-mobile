@@ -9,15 +9,33 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-
+import { connect } from 'react-redux'
 import { MonoText } from '../components/StyledText';
 
-export default class HomeScreen extends React.Component {
+class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      user_name: this.capitalize(this.props.auth.user.user_name)
+    }
+    this.capitalize = this.capitalize.bind(this)
+  }
+
   static navigationOptions = {
     header: null,
   };
 
+  
+  capitalize(username) {
+    return username.charAt(0).toUpperCase() + username.slice(1);
+  }
+
+
   render() {
+
+
+
+
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -35,7 +53,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>We are working mofo</Text>
+            <Text style={styles.getStartedText}>Kia ora {this.state.user_name}</Text>
 
             {/* <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
@@ -187,3 +205,11 @@ const styles = StyleSheet.create({
     color: '#2e78b7',
   },
 });
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.auth
+  }
+}
+
+export default connect(mapStateToProps)(HomeScreen)

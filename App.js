@@ -4,8 +4,8 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-// import RootNavigation from './navigation/RootNavigation';
-import Login from './components/Login/Login'
+import RootNavigation from './navigation/RootNavigation';
+// import Login from './components/Login/Login'
 
 
 import {Provider} from 'react-redux'
@@ -41,8 +41,8 @@ class App extends React.Component {
         <Provider store={store}>
           <View style={styles.container}>
             {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-            <Login />
-            {/* <RootNavigation /> */}
+            {/* <Login /> */}
+            <RootNavigation />
           </View>
         </Provider>
       );
