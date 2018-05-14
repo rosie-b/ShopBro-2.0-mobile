@@ -1,7 +1,34 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, StatusBar } from 'react-native';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    Image, 
+    TextInput, 
+    TouchableOpacity, 
+    KeyboardAvoidingView, 
+    StatusBar } from 'react-native';
+import {createStore} from 'redux'
+import { Connect } from 'redux'
+
+const TYPE_USER_NAME = 'TYPE_USER_NAME';
+const typeUsername = (text) => ({
+    type: TYPE_USER_NAME,
+    text
+})
 
 export default class LoginForm extends Component {
+    constructor(props){
+        super(props) 
+            this.state = {
+                user_name: '',
+                password: '',
+                pendingLoginRequest: false
+            };
+            // this.store = createStore((state, action) => {
+            //     return{...state, user_name: action.text}
+            // }, this.state)
+    }
     render() {
         return (
             <View style={styles.container}>
