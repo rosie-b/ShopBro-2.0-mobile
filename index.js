@@ -7,7 +7,7 @@ import {createStore, applyMiddleware, compose} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
 import reducers from './redux/reducers'
-import App from './components/App'
+import App from './App'
 
 
 let store = createStore(reducers, compose(
