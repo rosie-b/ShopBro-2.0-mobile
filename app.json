@@ -9,8 +9,8 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/48.png",
-    "splash": {
-      "image": "./assets/images/72.png",
+    "loading": {
+      "icon": "./assets/images/72.png",
       "backgroundColor": "#ffffff"
     },
     "updates": {
