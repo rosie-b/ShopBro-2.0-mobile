@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, KeyboardAvoidingView } from 'react-nativ
 import LoginForm from './LoginForm'
 import { connect } from 'react-redux'
 
-export default class Login extends Component {
+class Login extends Component {
     
     render() {
     console.log('here I am')
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
 });
 
 
-// export default connect()(Login)
+export default connect()(Login)

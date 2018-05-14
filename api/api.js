@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-import { get } from './localstorage'
+// import { get } from './localstorage'
 import { isAuthenticated } from './auth'
 
 const baseURL = 'https://shopbro.herokuapp.com/api/auth/login'
