@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
 import LoginForm from './LoginForm'
+import { connect } from 'react-redux'
 
 export default class Login extends Component {
     
@@ -46,3 +47,6 @@ const styles = StyleSheet.create({
         height: 100
     }
 });
+
+
+// export default connect()(Login)

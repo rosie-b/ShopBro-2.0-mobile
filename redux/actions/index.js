@@ -1,3 +1,6 @@
+import request from '../../api/api'
+import { saveUserToken } from '../../api/auth'
+
 function requestLogin () {
     return {
       type: 'LOGIN_REQUEST',

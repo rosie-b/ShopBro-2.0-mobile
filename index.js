@@ -15,6 +15,8 @@ let store = createStore(reducers, compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )) 
 
+//Need to look for a way to call redux/thunk in react-native with middleware.
+
 document.addEventListener('DOMContentLoaded', () => {
   render(
     <Provider store={store}>

@@ -8,14 +8,10 @@ import {
     TouchableOpacity, 
     KeyboardAvoidingView, 
     StatusBar } from 'react-native';
-import {createStore} from 'redux'
-import { Connect } from 'redux'
 
-const TYPE_USER_NAME = 'TYPE_USER_NAME';
-const typeUsername = (text) => ({
-    type: TYPE_USER_NAME,
-    text
-})
+import { connect } from 'react-redux'
+import { loginUser } from '../../redux/actions'
+
 
 export default class LoginForm extends Component {
     constructor(props){
@@ -23,12 +19,21 @@ export default class LoginForm extends Component {
             this.state = {
                 user_name: '',
                 password: '',
-                pendingLoginRequest: false
             };
-            // this.store = createStore((state, action) => {
-            //     return{...state, user_name: action.text}
-            // }, this.state)
+            this.updateDetails = this.updateDetails.bind(this)
+            this.submit = this.submit.bind(this)
     }
+
+    updateDetails(e) {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
+    submit(e) {
+        e.preventDefault()
+        let {user_name, password} = this.state
+        this.props.dispatch(loginUser({user_name, password}))
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -43,6 +48,7 @@ export default class LoginForm extends Component {
                     autoCorrect={false}
                     underlineColorAndroid='transparent'
                     style={styles.input}
+                    onChange={this.updateDetails}
                 />
                 <TextInput 
                     placeholder='password'
@@ -52,8 +58,9 @@ export default class LoginForm extends Component {
                     underlineColorAndroid='transparent'
                     style={styles.input}
                     ref={(input) => this.passwordInput = input}
+                    onChange={this.updateDetails}
                 />
-                <TouchableOpacity style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.buttonContainer} onSubmit={this.submit}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
             </View>
@@ -81,3 +88,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10
     }
 })
+
+// export default connect()(LoginForm)
