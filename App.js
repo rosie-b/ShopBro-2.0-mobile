@@ -6,11 +6,22 @@ import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 // import RootNavigation from './navigation/RootNavigation';
 import Login from './components/Login/Login'
-import { connect } from 'react-redux'
 
 
+import {Provider} from 'react-redux'
+import {createStore, applyMiddleware, compose} from 'redux'
+import thunkMiddleware from 'redux-thunk'
 
-export default class App extends React.Component {
+import reducers from './redux/reducers'
+
+
+let store = createStore(reducers, compose(
+  applyMiddleware(thunkMiddleware)
+  // window.devToolsExtension ? window.devToolsExtension() : f => f
+)) 
+
+
+class App extends React.Component {
   state = {
     isLoadingComplete: false,
 
@@ -27,11 +38,13 @@ export default class App extends React.Component {
       );
     } else {
       return (
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <Login />
-          {/* <RootNavigation /> */}
-        </View>
+        <Provider store={store}>
+          <View style={styles.container}>
+            {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+            <Login />
+            {/* <RootNavigation /> */}
+          </View>
+        </Provider>
       );
     }
   }
@@ -72,4 +85,4 @@ const styles = StyleSheet.create({
 
 
 
-// export default connect()(App)
+export default App

@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions'
 
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
     constructor(props){
         super(props) 
             this.state = {
@@ -89,4 +89,4 @@ const styles = StyleSheet.create({
     }
 })
 
-// export default connect()(LoginForm)
+export default connect()(LoginForm)

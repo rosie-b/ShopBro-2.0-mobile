@@ -1,13 +1,13 @@
 import request from 'superagent'
 
-import { get } from './localstorage'
+// import { get } from './localstorage'
 import { isAuthenticated } from './auth'
 
 const baseURL = 'https://shopbro.herokuapp.com/api/auth/login'
 
 export default function consume(method = 'get', endpoint, data = {}) {
   const dataMethod = method.toLowerCase() === 'get' && 'query' || 'send'
-  const token = get('token')
+  const token = 'TOKEN'//get('token')
   const headers = {
     Accept: 'application/json'
   }
