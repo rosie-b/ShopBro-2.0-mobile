@@ -1,9 +1,16 @@
 import React from 'react';
 import { Notifications } from 'expo';
-import { createSwitchNavigator } from 'react-navigation';
+import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
+
+// const AppStack = createStackNavigator({ Home: HomeScreen, Links: LinksScreen, Settings: SettingsScreen})
+// const AuthStack = createStackNavigator({ })
+
+//NOTES: Need to check this with Ross in the morning.  Not sure how to connect the store 
+//Invariant Violation: Could not find "store" in either the context or props of "Connect(App)". Either wrap the root component in a <Provider>, or explicitly pass "store" as a prop to "Connect(App)".
+
 
 const AppNavigator = createSwitchNavigator({
   // You could add another route here for authentication.

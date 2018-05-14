@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
 import LoginForm from './LoginForm'
+import { connect } from 'react-redux'
 
 export default class Login extends Component {
+    
     render() {
-    return (
+    console.log('here I am')
+        return (
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
             <View style={styles.logoContainer}>
                 <Image 
@@ -44,3 +47,6 @@ const styles = StyleSheet.create({
         height: 100
     }
 });
+
+
+// export default connect()(Login)

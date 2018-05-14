@@ -32,7 +32,8 @@ npm manifest:
       "expo": "^27.0.1",
       "react": "16.3.1",
       "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
-      "react-navigation": "2.0.0"
+      "react-navigation": "2.0.0",
+      "react-redux": "^5.0.7"
     },
     "devDependencies": {
       "jest-expo": "^27.0.0",
@@ -5725,7 +5726,7 @@ Lockfile:
       lodash "^4.6.1"
       react-deep-force-update "^1.0.0"
   
-  react-redux@^5.0.2:
+  react-redux@^5.0.2, react-redux@^5.0.7:
     version "5.0.7"
     resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
     dependencies:
@@ -7297,7 +7298,7 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 3221225786
+  Exit code: 1
   Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c react-native-scripts start
   Directory: C:\Users\engie\EngieMatene\shopbroapp
