@@ -44,7 +44,7 @@ class App extends React.Component {
             {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
             <Test />
             {/* <Login /> */}
-            <RootNavigation />
+            {/* <RootNavigation /> */}
           </View>
         </Provider>
       );

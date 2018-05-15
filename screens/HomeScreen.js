@@ -9,14 +9,14 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { MonoText } from '../components/StyledText';
+import {logoutUser} from '../redux/actions/logout'
+
 
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props)
-
-      console.log('I am props',this.props.auth.user)
 
     this.state = {
       username: this.props.auth.user.user_name
@@ -59,6 +59,11 @@ class HomeScreen extends React.Component {
               }
               style={styles.welcomeImage}
             />
+            <TouchableOpacity onPress={() => this.props.dispatch(logoutUser())}>
+              <Text>
+                Logout
+              </Text>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.getStartedContainer}>
@@ -75,11 +80,12 @@ class HomeScreen extends React.Component {
             </Text>
           </View>
 
-          <View style={styles.helpContainer}>
+          {/* <View style={styles.helpContainer}>
             <TouchableOpacity onPress={this._handleRegister} style={styles.helpLink}>
               <Text style={styles.helpLinkText}>Create a new account</Text>
             </TouchableOpacity>
           </View>
+          SHOPBRO TEAM: Please leave this code.  This is how you will create a hyperlink in React Native. */}
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
