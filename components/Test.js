@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Image, KeyboardAvoidingView } from 'react-nativ
 import { connect } from 'react-redux'
 
 import { checkUserToken } from '../redux/actions'
+import RootNavigation from '../navigation/RootNavigation'
+import Login from './Login/Login'
 
 class Test extends Component {
 
@@ -15,7 +17,7 @@ class Test extends Component {
     console.log('here I am')
     return (
         <View>
-            <Text>{ this.props.auth.isAuthenticated === true ? 'You are logged in' : 'You are NOT logged in' }</Text>
+            <Text>{this.props.auth.isAuthenticated === true ? 'You are logged in' : "You are logged out"}</Text>
         </View>
     );
   }
