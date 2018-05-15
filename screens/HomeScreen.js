@@ -15,8 +15,11 @@ import { MonoText } from '../components/StyledText';
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props)
+
+      console.log('I am props',this.props.auth.user)
+
     this.state = {
-      user_name: this.capitalize(this.props.auth.user.user_name)
+      username: this.capitalize(this.props.auth.user.user_name)
     }
     this.capitalize = this.capitalize.bind(this)
   }
@@ -25,9 +28,17 @@ class HomeScreen extends React.Component {
     header: null,
   };
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({username: this.capitalize(nextProps.auth.user.user_name) })
+  }
   
   capitalize(username) {
+    //put the if statement here for state
+    if (username == typeof '') {
     return username.charAt(0).toUpperCase() + username.slice(1);
+    } else {
+      ''
+    }
   }
 
 
@@ -52,8 +63,7 @@ class HomeScreen extends React.Component {
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>Kia ora {this.state.user_name}</Text>
+            <Text style={styles.getStartedText}>Kia ora {this.state.username}</Text>
 
             {/* <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
