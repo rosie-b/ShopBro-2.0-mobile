@@ -11,6 +11,7 @@ import {
 
 import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions'
+import { WebBrowser } from 'expo'
 
 
 class LoginForm extends Component {
@@ -66,9 +67,20 @@ class LoginForm extends Component {
                 <TouchableOpacity style={styles.buttonContainer} onPress={this.submit}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
+                <View style={styles.helpContainer}>
+                    <TouchableOpacity onPress={this._handleRegister} style={styles.helpLink}>
+                        <Text style={styles.helpLinkText}>Create a new account</Text>
+                    </TouchableOpacity>
+                </View>
+
             </View>
         )
     }
+    _handleRegister = () => {
+        WebBrowser.openBrowserAsync(
+          'https://shopbro.herokuapp.com/#/register'
+        );
+      };
 }
 
 const styles = StyleSheet.create({
@@ -89,7 +101,12 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         color: 'black',
         paddingHorizontal: 10
-    }
+    },
+    helpContainer: {
+        marginTop: 15,
+        paddingVertical: 15,
+        alignItems: 'center',
+      }
 })
 
 export default connect()(LoginForm)
