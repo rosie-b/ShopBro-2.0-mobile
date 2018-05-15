@@ -19,7 +19,6 @@ import reducers from './redux/reducers'
 
 let store = createStore(reducers, compose(
   applyMiddleware(thunkMiddleware)
-  // window.devToolsExtension ? window.devToolsExtension() : f => f
 )) 
 
 
@@ -45,7 +44,7 @@ class App extends React.Component {
             {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
             <Test />
             {/* <Login /> */}
-            <RootNavigation />
+            {/* <RootNavigation /> */}
           </View>
         </Provider>
       );
