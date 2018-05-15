@@ -19,7 +19,6 @@ import reducers from './redux/reducers'
 
 let store = createStore(reducers, compose(
   applyMiddleware(thunkMiddleware)
-  // window.devToolsExtension ? window.devToolsExtension() : f => f
 )) 
 
 
