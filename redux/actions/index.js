@@ -1,5 +1,6 @@
 import request from '../../api/api'
-import { saveUserToken } from '../../api/auth'
+import { saveUserToken, getUserTokenInfo } from '../../api/auth'
+
 
 function requestLogin () {
     return {
@@ -37,12 +38,23 @@ function requestLogin () {
             dispatch(loginError(response.body.message))
             return Promise.reject(response.body.message)
           } else {
-            const userInfo = saveUserToken(response.body.token)
-            dispatch(receiveLogin(userInfo))
-            console.log(userInfo) 
+            saveUserToken(response.body.token).then(userInfo => {
+              console.log('userInfo', userInfo) 
+              dispatch(receiveLogin(userInfo))
+            })
           }
-        }).catch(err => alert("Try Again!")
-  
-        )
+        }).catch(err => {
+          console.log(err)
+          alert("Try Again!")
+        })
+    }
+  }
+
+  export function checkUserToken() {
+    return dispatch => {
+      return getUserTokenInfo().then((userInfo) => {
+        console.log(userInfo)
+        if (userInfo) dispatch(receiveLogin(userInfo))
+      })
     }
   }

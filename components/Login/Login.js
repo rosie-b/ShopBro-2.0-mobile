@@ -48,5 +48,9 @@ const styles = StyleSheet.create({
     }
 });
 
+function mapStateToProps(state){
+    console.log('login', state)
+    return {}
+}
 
-export default connect()(Login)
+export default connect(mapStateToProps)(Login)

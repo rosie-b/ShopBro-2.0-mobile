@@ -25,10 +25,12 @@ class LoginForm extends Component {
     }
 
     updateDetails(e) {
+        // console.log(e.target.name)
         this.setState({[e.target.name]: e.target.value})
     }
 
     submit(e) {
+        console.log(this.state)
         e.preventDefault()
         let {user_name, password} = this.state
         this.props.dispatch(loginUser({user_name, password}))
@@ -42,13 +44,14 @@ class LoginForm extends Component {
               />
                 <TextInput 
                     placeholder='username'
+                    name='user_name'
                     placeholderTextColor='#85756E'
                     returnKeyType='next'
                     onSubmitEditing={() => this.passwordInput.focus()}
                     autoCorrect={false}
                     underlineColorAndroid='transparent'
                     style={styles.input}
-                    onChange={this.updateDetails}
+                    onChangeText={(text) => this.setState({user_name: text})}
                 />
                 <TextInput 
                     placeholder='password'
@@ -58,9 +61,9 @@ class LoginForm extends Component {
                     underlineColorAndroid='transparent'
                     style={styles.input}
                     ref={(input) => this.passwordInput = input}
-                    onChange={this.updateDetails}
+                    onChangeText={(text) => this.setState({password: text})}
                 />
-                <TouchableOpacity style={styles.buttonContainer} onSubmit={this.submit}>
+                <TouchableOpacity style={styles.buttonContainer} onPress={this.submit}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
             </View>

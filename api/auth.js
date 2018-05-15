@@ -19,16 +19,30 @@ export function isAuthenticated () {
   }
 }
 
-export function saveUserToken (token) {
-  set('token', token)
-  return decode(token)
-}
+// export function saveUserToken (token) {
+//   set('token', token)
+//   return decode(token)
+// }
 
-export function getUserTokenInfo () {
-  const token = get('token')
-  return token ? decode(token) : null
-}
+// export function getUserTokenInfo () {
+//   const token = get('token')
+//   return token ? decode(token) : null
+// }
 
 export function removeUser () {
   set('token', null)
+}
+
+export function getUserTokenInfo() {
+  return get('token').then((token) => {
+    return token ? decode(token) : null    
+  })
+}
+
+export function saveUserToken (token) {
+  console.log('prelogin', token)  
+  return set('token', token).then((token) => {
+    console.log('login', token, decode(token))
+    return token ? decode(token) : null    
+  })
 }
