@@ -20,7 +20,7 @@ class TotalSavings extends Component {
             <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                 <View>
                   {console.log(this.props)}
-                    <Text>You have saved: ${this.props.dashboardShoppingListTotals[0] && (this.props.dashboardShoppingListTotals[0].totalsavings/100).toFixed(2)}</Text>
+                    <Text style={styles.getStartedText}>You have saved: ${this.props.dashboardShoppingListTotals[0] && (this.props.dashboardShoppingListTotals[0].totalsavings/100).toFixed(2)}</Text>
                 </View>
             </ScrollView>
         </View>
@@ -33,9 +33,11 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
+      paddingHorizontal: 10
     },
     contentContainer: {
-      paddingTop: 30,
+      paddingTop: 10,
+      paddingBottom: 10,
     },
     welcomeContainer: {
       alignItems: 'center',
@@ -63,6 +65,7 @@ const styles = StyleSheet.create({
       color: 'rgba(96,100,109, 1)',
       lineHeight: 24,
       textAlign: 'center',
+      
     },
     tabBarInfoText: {
       fontSize: 17,

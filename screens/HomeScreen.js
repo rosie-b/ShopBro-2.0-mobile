@@ -60,8 +60,8 @@ class HomeScreen extends React.Component {
               }
               style={styles.welcomeImage}
             />
-            <TouchableOpacity onPress={() => this.props.dispatch(logoutUser())}>
-              <Text>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.dispatch(logoutUser())}>
+              <Text style={styles.buttonText}>
                 Logout
               </Text>
             </TouchableOpacity>
@@ -135,7 +135,7 @@ class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f4bf44',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -151,6 +151,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
     marginBottom: 20,
+    backgroundColor: '#f4bf44',
   },
   welcomeImage: {
     width: 100,
@@ -161,7 +162,8 @@ const styles = StyleSheet.create({
   },
   getStartedContainer: {
     alignItems: 'center',
-    marginHorizontal: 50,
+    marginHorizontal: 70,
+    paddingBottom: 30,
   },
   homeScreenFilename: {
     marginVertical: 7,
@@ -175,10 +177,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   getStartedText: {
-    fontSize: 17,
+    fontSize: 25,
     color: 'rgba(96,100,109, 1)',
     lineHeight: 24,
     textAlign: 'center',
+    fontWeight: '700'
   },
   tabBarInfoContainer: {
     position: 'absolute',
@@ -219,7 +222,16 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
-});
+  buttonContainer: {
+      backgroundColor: '#85756E',
+      paddingVertical: 10,
+      paddingHorizontal: 5,
+  },
+  buttonText: {
+      textAlign: 'center',
+      fontWeight: '700'
+  }
+  });
 
 const mapStateToProps = (state) => {
   return {
