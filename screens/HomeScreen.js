@@ -19,7 +19,7 @@ class HomeScreen extends React.Component {
     super(props)
 
     this.state = {
-      username: this.props.auth.user.user_name
+      username: this.capitalize(this.props.auth.user.user_name)
     }
     this.capitalize = this.capitalize.bind(this)
   }
