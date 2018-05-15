@@ -2,15 +2,25 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { logoutUser } from '../redux/actions/logout'
+import {getShoppingListTotals} from '../redux/actions/shoppinglisttotals'
 
 class TotalSavings extends Component {
+
+  componentDidMount() {
+    // this.props.dispatch(getShoppingLists())
+    // this.props.dispatch(getShoppingListById())
+    this.props.dispatch(getShoppingListTotals())
+  }
+
+  
+
     render() {
         return (
         <View style={styles.container}>
             <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                 <View>
-                    <Text>You have saved:</Text>
-                    {/* {this.props.totalsavings} */}
+                  {console.log(this.props)}
+                    <Text>You have saved: ${this.props.dashboardShoppingListTotals[0] && (this.props.dashboardShoppingListTotals[0].totalsavings/100).toFixed(2)}</Text>
                 </View>
             </ScrollView>
         </View>
@@ -64,12 +74,13 @@ const styles = StyleSheet.create({
     },
   });
 
-// function mapStateToProps(state) {
-//      return{
-//          auth: state.auth,
-//          totalsavings: state.shoppingliststotals
-//      }
-// }
 
-//export default connect(mapStateToProps)(TotalSavings)
-export default TotalSavings
+  const mapStateToProps = (state) => {
+     return{
+         auth: state.auth,
+         dashboardShoppingListTotals: state.dashboardShoppingListTotals
+     }
+}
+
+export default connect(mapStateToProps)(TotalSavings)
+// export default TotalSavings

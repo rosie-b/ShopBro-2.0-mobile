@@ -223,7 +223,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.auth
+    auth: state.auth,
+    dashboardShoppingListTotals: state.dashboardShoppingListTotals
   }
 }
 

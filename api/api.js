@@ -31,3 +31,5 @@ export default function consume(method = 'get', endpoint, data = {}) {
     })
   })
 }
+
+
