@@ -11,7 +11,8 @@ import {
 import { WebBrowser } from 'expo';
 import { connect } from 'react-redux';
 import { MonoText } from '../components/StyledText';
-import {logoutUser} from '../redux/actions/logout'
+import {logoutUser} from '../redux/actions/logout';
+import TotalSavings from '../components/TotalSavings'
 
 
 class HomeScreen extends React.Component {
@@ -68,16 +69,14 @@ class HomeScreen extends React.Component {
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
-            <Text style={styles.getStartedText}>Kia ora {this.state.username}</Text>
+            <Text style={styles.getStartedText}>Kia ora {this.state.username}!</Text>
 
             {/* <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
             </View> 
             SHOPBRO TEAM: Please leave this code.  It will be handy to refer to as we build*/}
 
-            <Text style={styles.getStartedText}>
-              ENTER TEXT HERE 2
-            </Text>
+            <TotalSavings />
           </View>
 
           {/* <View style={styles.helpContainer}>
@@ -89,10 +88,10 @@ class HomeScreen extends React.Component {
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>ENTER TEXT HERE 4</Text>
+          <Text style={styles.tabBarInfoText}>This application is in development</Text>
 
           <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>ENTER TEXT HERE 5</MonoText>
+            <MonoText style={styles.codeHighlightText}>Watch this space, there is more to come!</MonoText>
           </View>
         </View>
       </View>

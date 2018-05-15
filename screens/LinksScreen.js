@@ -1,6 +1,9 @@
-import React from 'react';
-import { ScrollView, StyleSheet, Text, Platform } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
+
+import React, { Component } from 'react';
+import { Platform, View, Text, StyleSheet, Image, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+import { logoutUser } from '../redux/actions/logout'
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
@@ -9,9 +12,27 @@ export default class LinksScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        <Text style={styles.getStartedText}>This will be the main app screen.</Text>
-      </ScrollView>
+      <View style={styles.container}>
+            <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+            <View style={styles.welcomeContainer}>
+                <Image
+                source={require('../assets/images/144.png')}
+                style={styles.welcomeImage}
+                />
+                <TouchableOpacity onPress={() => this.props.dispatch(logoutUser())}>
+                    <Text>
+                        Logout
+                    </Text>
+                </TouchableOpacity>
+            </View>
+            </ScrollView>
+
+            <View style={styles.welcomeContainer}>
+                <Text>This will be the main app</Text>
+                {/* {this.props.totalsavings} */}
+            </View>
+
+        </View>
     );
   }
 }
