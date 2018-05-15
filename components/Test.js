@@ -7,13 +7,6 @@ import RootNavigation from '../navigation/RootNavigation'
 import Login from './Login/Login'
 
 class Test extends Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         username: this.props.auth.user.user_name,
-    //         password: this.props.auth.user.password
-    //     }
-    // }
 
     componentDidMount(){
         this.props.dispatch(checkUserToken())

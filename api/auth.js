@@ -19,16 +19,6 @@ export function isAuthenticated () {
   }
 }
 
-// export function saveUserToken (token) {
-//   set('token', token)
-//   return decode(token)
-// }
-
-// export function getUserTokenInfo () {
-//   const token = get('token')
-//   return token ? decode(token) : null
-// }
-
 export function removeUser () {
   set('token', null)
 }
@@ -39,10 +29,8 @@ export function getUserTokenInfo() {
   })
 }
 
-export function saveUserToken (token) {
-  console.log('prelogin', token)  
+export function saveUserToken (token) { 
   return set('token', token).then((token) => {
-    console.log('login', token, decode(token))
     return token ? decode(token) : null    
   })
 }
