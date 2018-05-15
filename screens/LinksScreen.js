@@ -5,7 +5,7 @@ import { Platform, View, Text, StyleSheet, Image, KeyboardAvoidingView, ScrollVi
 import { connect } from 'react-redux';
 import { logoutUser } from '../redux/actions/logout'
 
-export default class LinksScreen extends React.Component {
+class LinksScreen extends React.Component {
   static navigationOptions = {
     title: 'Links',
   };
@@ -100,3 +100,12 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   }
 });
+
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.auth
+  }
+}
+
+export default connect(mapStateToProps)(LinksScreen)
