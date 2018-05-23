@@ -22,8 +22,8 @@ class Test extends Component {
   }
 }
 
-//This styling below is important to have all the components flex to get the view we get.
-//Without the styling below
+//This styling below is important to have all the components flex to get the view we get when looking at our app in production.
+//Without the styling below, the page will not render properly.
 const styles = StyleSheet.create({
     container: {
       flex: 1,

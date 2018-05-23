@@ -1,24 +1,11 @@
-// const localStorage = global.window.localStorage
-
-// console.log('localstorage')
-
-// export function get (key) {
-//   return //localStorage.getItem(key)
-// }
-
-// export function set (key, value) {
-//   if(value === null) {
-//     //localStorage.removeItem(key)
-//   } else {
-//     //localStorage.setItem(key, value)
-//   }
-// }
 
 import { AsyncStorage } from 'react-native'
 
+//the local storage code noted below is really important.  Unlike webrowers that have local storage, react-native mobile apps use async storage in order to work with the 
+//the data in state in real time.
+//The async storage setup below connects to our api, pulling in the token like local storage that we use on our Shop Bro 2.0 web app.
+
 export async function get(key) {
-  // return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJ1c2VyX25hbWUiOiJlbmdpZSIsInVzZXJfZW1haWwiOiJFbmdpZSIsImlhdCI6MTUyNjM0MDAwOSwiZXhwIjoxNTI2NDI2NDA5fQ.C0-VGaYi6ymqkSASrHG3190Kjav9HGvEcS1nd0GbCDE"
-  // set('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJ1c2VyX25hbWUiOiJlbmdpZSIsInVzZXJfZW1haWwiOiJFbmdpZSIsImlhdCI6MTUyNjM0MDAwOSwiZXhwIjoxNTI2NDI2NDA5fQ.C0-VGaYi6ymqkSASrHG3190Kjav9HGvEcS1nd0GbCDE").then(() => console.log('saved'))
   try {
     const value = await AsyncStorage.getItem(key);
     return value
@@ -26,8 +13,7 @@ export async function get(key) {
     if (value !== null){
       console.log(value)
     } 
-  } catch (error) {
-  //Error retrieving data   
+  } catch (error) {  
   }
 }
 
@@ -38,6 +24,5 @@ export async function set(key, value) {
     console.log('setted')
     return value
   } catch (error) {
-    //Error saving data
   }
 }

@@ -31,6 +31,8 @@ export default class RootNavigation extends React.Component {
     return <AppNavigator />;
   }
 
+
+  //NOTE: Please leave this code.  It shows how to connect a push notification to the application.
   // _registerForPushNotifications() {
   //   // Send our push token over to our backend so we can receive notifications
   //   // You can comment the following line out if you want to stop receiving

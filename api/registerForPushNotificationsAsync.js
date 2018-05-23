@@ -1,3 +1,6 @@
+//This page I have left as it provides code for how to write a push notification to a mobile app.
+//Interesting stuff to get stuck in a rabbit hole with
+
 // import { Constants, Permissions, Notifications } from 'expo';
 
 // //This is about pushing data to your device specifically but not connected to api's

@@ -7,8 +7,6 @@ import {getShoppingListTotals} from '../redux/actions/shoppinglisttotals'
 class TotalSavings extends Component {
 
   componentDidMount() {
-    // this.props.dispatch(getShoppingLists())
-    // this.props.dispatch(getShoppingListById())
     this.props.dispatch(getShoppingListTotals())
   }
 
@@ -86,4 +84,3 @@ const styles = StyleSheet.create({
 }
 
 export default connect(mapStateToProps)(TotalSavings)
-// export default TotalSavings

@@ -4,12 +4,10 @@ import { get } from './localstorage'
 import { isAuthenticated } from './auth'
 
 const baseURL = 'https://shopbro.herokuapp.com/api/'
-// const baseURL = 'http://192.168.1.110:3000/api/'
 
 export default function consume(method = 'get', endpoint, data = {}) {
   const dataMethod = method.toLowerCase() === 'get' && 'query' || 'send'
-  // const token = get('token')
-
+  
   return get('token').then(token => {
     const headers = {
       Accept: 'application/json'

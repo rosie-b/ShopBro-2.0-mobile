@@ -10,8 +10,7 @@ export function receiveShoppingListTotals(shoppinglistTotals){
 
 //Use this function to get a shopping list by shopping list id 
 //You must use component did mount
-export function getShoppingListTotals() {
-console.log('STEVE')  
+export function getShoppingListTotals() {  
 return (dispatch) => {
     return request( 'get', 'v1/shoppingliststotals' )
     .then (res => {

@@ -39,7 +39,7 @@ function requestLogin () {
             return Promise.reject(response.body.message)
           } else {
             saveUserToken(response.body.token).then(userInfo => {
-              console.log('userInfo', userInfo) 
+              // console.log('userInfo', userInfo)  Leave this console.log for reference if authi breaks 
               dispatch(receiveLogin(userInfo))
             })
           }
@@ -53,7 +53,7 @@ function requestLogin () {
   export function checkUserToken() {
     return dispatch => {
       return getUserTokenInfo().then((userInfo) => {
-        console.log(userInfo)
+        //console.log(userInfo) //Leave this console.log for reference if authi breaks 
         if (userInfo) dispatch(receiveLogin(userInfo))
       })
     }
