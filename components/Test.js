@@ -6,6 +6,10 @@ import { checkUserToken } from '../redux/actions'
 import RootNavigation from '../navigation/RootNavigation'
 import Login from './Login/Login'
 
+//This test component should have been made a screen and I would have called it LoginScreen
+//I kept the test component as it is for the sake of getting the auth to work in our mobile app.
+//This section can and will be updated to refer to LoginScreen.
+
 class Test extends Component {
 
     componentDidMount(){

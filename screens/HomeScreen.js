@@ -14,7 +14,7 @@ import { MonoText } from '../components/StyledText';
 import {logoutUser} from '../redux/actions/logout';
 import TotalSavings from '../components/TotalSavings'
 
-//Screens work like pages.  Each screen will render a like a new page.
+//Screens work like pages.  Each screen will render like a new page.
 //E.g HomeScreen will be the first screen you will see when you have logged into the app.
 //LinksScreen and SettingsScreen connects to the HomeScreen via the nav bar at the bottom of the screen (see screenshots of the App in production) and vice versa.
 //So if I wanted to create another new page, I would need to create the screen for it first.

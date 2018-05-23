@@ -3,6 +3,9 @@ import { Notifications } from 'expo';
 import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
+
+//NOTE: Please leave this code.  It shows how to connect a push notification to the application.
+
 // import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 // const AppStack = createStackNavigator({ Home: HomeScreen, Links: LinksScreen, Settings: SettingsScreen})
