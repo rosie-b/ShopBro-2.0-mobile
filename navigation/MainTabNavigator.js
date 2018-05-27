@@ -27,7 +27,7 @@ HomeStack.navigationOptions = {
 };
 
 const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+  ShopBro: LinksScreen,
 });
 
 LinksStack.navigationOptions = {

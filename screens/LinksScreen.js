@@ -7,7 +7,7 @@ import { logoutUser } from '../redux/actions/logout'
 
 class LinksScreen extends React.Component {
   static navigationOptions = {
-    title: 'Links',
+    title: 'ShopBro 2.0',
   };
 
   render() {
@@ -15,12 +15,8 @@ class LinksScreen extends React.Component {
       <View style={styles.container}>
             <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
             <View style={styles.welcomeContainer}>
-                <Image
-                source={require('../assets/images/144.png')}
-                style={styles.welcomeImage}
-                />
-                <TouchableOpacity onPress={() => this.props.dispatch(logoutUser())}>
-                    <Text>
+                <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.dispatch(logoutUser())}>
+                    <Text style={styles.buttonText}>
                         Logout
                     </Text>
                 </TouchableOpacity>
@@ -98,6 +94,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fbfbfb',
     paddingVertical: 20,
+  },
+  buttonText: {
+      textAlign: 'center',
+      fontWeight: '700'
+  },
+  buttonContainer: {
+      backgroundColor: '#85756E',
+      paddingVertical: 10,
+      paddingHorizontal: 5,
   }
 });
 
