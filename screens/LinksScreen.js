@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Platform, View, Text, StyleSheet, Image, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { logoutUser } from '../redux/actions/logout'
+import BudgetSettings from '../components/BudgetSettings'
 
 class LinksScreen extends React.Component {
   static navigationOptions = {
@@ -13,7 +14,7 @@ class LinksScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-            <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+            {/* <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}> */}
             <View style={styles.welcomeContainer}>
                 <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.dispatch(logoutUser())}>
                     <Text style={styles.buttonText}>
@@ -21,7 +22,11 @@ class LinksScreen extends React.Component {
                     </Text>
                 </TouchableOpacity>
             </View>
-            </ScrollView>
+            {/* </ScrollView> */}
+
+            <View style={styles.welcomeContainer}>
+              <BudgetSettings/>
+            </View>
 
             <View style={styles.welcomeContainer}>
                 <Text>This will be the main app</Text>
