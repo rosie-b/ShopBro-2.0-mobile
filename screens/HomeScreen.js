@@ -77,7 +77,8 @@ class HomeScreen extends React.Component {
             {/* <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
             </View> 
-            SHOPBRO TEAM: Please leave this code.  It will be handy to refer to as we build*/}
+            SHOPBRO TEAM: Please leave this code.  It will be handy to refer to as we build because it shows how MonoText
+            is used when created in the StyledText component.  Not something I have seen before.*/}
 
             <TotalSavings />
           </View>
@@ -87,7 +88,7 @@ class HomeScreen extends React.Component {
               <Text style={styles.helpLinkText}>Create a new account</Text>
             </TouchableOpacity>
           </View>
-          SHOPBRO TEAM: Please leave this code.  This is how you will create a hyperlink in React Native. */}
+          SHOPBRO TEAM: Please leave this code.  This is how you will create a hyperlink (eg. <a>) tag in React Native. */}
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>

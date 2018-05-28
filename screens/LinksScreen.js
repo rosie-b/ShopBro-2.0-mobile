@@ -1,5 +1,7 @@
-import { ExpoLinksView } from '@expo/samples';
+//COMMENTS: Please see the comments on the HomeScreen Page for information on what Screens are.
 
+
+import { ExpoLinksView } from '@expo/samples';
 import React, { Component } from 'react';
 import { Platform, View, Text, StyleSheet, Image, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';

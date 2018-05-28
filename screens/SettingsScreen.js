@@ -1,3 +1,5 @@
+//COMMENTS: Please see the comments on the HomeScreen Page for information on what Screens are.
+
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 
